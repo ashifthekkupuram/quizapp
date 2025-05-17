@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What is the capital city of France?",
+        "options": [
+            "Paris",
+            "Berlin",
+            "Madrid",
+            "Rome"
+        ],
+        "answer": "Paris"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": [
+            "Earth",
+            "Venus",
+            "Mars",
+            "Jupiter"
+        ],
+        "answer": "Mars"
+    },
+    {
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "options": [
+            "William Wordsworth",
+            "William Shakespeare",
+            "George Orwell",
+            "Jane Austen"
+        ],
+        "answer": "William Shakespeare"
+    },
+    {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": [
+            "Oxygen",
+            "Nitrogen",
+            "Carbon Dioxide",
+            "Helium"
+        ],
+        "answer": "Carbon Dioxide"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "options": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Arctic Ocean",
+            "Pacific Ocean"
+        ],
+        "answer": "Pacific Ocean"
+    },
+    {
+        "question": "How many continents are there on Earth?",
+        "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "answer": "7"
+    },
+    {
+        "question": "Which animal is known as the King of the Jungle?",
+        "options": [
+            "Elephant",
+            "Tiger",
+            "Lion",
+            "Leopard"
+        ],
+        "answer": "Lion"
+    },
+    {
+        "question": "Which country is known for the Great Wall?",
+        "options": [
+            "India",
+            "Japan",
+            "China",
+            "South Korea"
+        ],
+        "answer": "China"
+    },
+    {
+        "question": "How many sides does a hexagon have?",
+        "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "answer": "6"
+    },
+    {
+        "question": "What is the boiling point of water at sea level?",
+        "options": [
+            "90°C",
+            "95°C",
+            "100°C",
+            "105°C"
+        ],
+        "answer": "100°C"
+    }
+]
