@@ -29,7 +29,7 @@ const Question = ({ setCorrectAnswers, setResult }) => {
     console.log(question)
 
     return (
-        <div className='flex flex-col justify-center items-center  bg-slate-800 w-full h-screen'>
+        <div className='flex flex-col justify-center items-center bg-slate-800 w-full h-screen'>
             <span className='text-slate-900 mb-2'>
                 {count+1} out of 10 questions
             </span>

@@ -1,19 +1,35 @@
-import { useState } from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
-import StartMenu from "./components/StartMenu"
-import Question from "./components/Question"
-import Result from "./components/Result"
+import Home from "./pages/Home"
+import SignIn from "./pages/SignIn"
+import AuthRequired from './components/AuthRequired'
+import AuthRedirect from './components/AuthRedirect'
 
 const App = () => {
 
-  const [start, setStart] = useState(false)
-  const [correctAnswers, setCorrectAnswers] = useState(0)
-  const [result, setResult] = useState(false)
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <AuthRequired />,
+      children: [
+        {
+          path: '/',
+          element: <Home />
+        }
+      ]
+    },
+    {
+      path: '/',
+      element: <AuthRedirect />,
+      children: [{
+        path: '/signin',
+        element: <SignIn />
+      }]
+    },
+  ])
 
   return (
-    <div className=''>
-      { !start ? <StartMenu setStart={setStart} /> : result ? <Result setStart={setStart} correctAnswers={correctAnswers} setCorrectAnswers={setCorrectAnswers} setResult={setResult}   /> :  <Question setCorrectAnswers={setCorrectAnswers} setResult={setResult} />  }
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
