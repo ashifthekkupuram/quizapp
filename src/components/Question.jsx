@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import questions from '../data/questions.json'
-
-const Question = ({ setCorrectAnswers, setResult }) => {
+const Question = ({ setCorrectAnswers, setResult, questions }) => {
 
     const [question, setQuestion] = useState(null)
     const [count, setCount] = useState(0)
@@ -23,15 +21,15 @@ const Question = ({ setCorrectAnswers, setResult }) => {
     }
 
     useEffect(() => {
-        setQuestion(questions[0])
-    },[])
-
-    console.log(question)
+        if(questions){
+            setQuestion(questions[0])
+        }
+    },[questions])
 
     return (
         <div className='flex flex-col justify-center items-center bg-slate-800 w-full h-screen'>
             <span className='text-slate-900 mb-2'>
-                {count+1} out of 10 questions
+                {count+1} out of {questions.length} questions
             </span>
             <p className='text-white text-3xl mb-5 text-center'>{question?.question || ''}</p>
             <div className='grid md:grid-cols-2 md:grid-rows-2 gap-3'>
