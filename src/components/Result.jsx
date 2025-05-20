@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore"
 import NavBar from "./NavBar"
 import { auth, db } from "../firebase/firebase"
 
-const Result = ({ setStart, correctAnswers, setCorrectAnswers, setResult, setQuestions, questions }) => {
+const Result = ({ setStart, correctAnswers, setCorrectAnswers, setResult, setQuestions, questions, hardMode }) => {
 
     const onHome = async () => {
 
@@ -13,10 +13,11 @@ const Result = ({ setStart, correctAnswers, setCorrectAnswers, setResult, setQue
                 total_score: questions.length,
                 score: correctAnswers,
                 user: auth?.currentUser?.uid,
+                mode: hardMode ? 'Hard': 'Normal',
                 completed_at: new Date()
             })
         } catch (error) {
-            console.log(error)
+            
         }
 
 

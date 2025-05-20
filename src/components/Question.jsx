@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const Question = ({ setCorrectAnswers, setResult, questions }) => {
+const Question = ({ setCorrectAnswers, setResult, questions, hardMode }) => {
 
     const [question, setQuestion] = useState(null)
     const [count, setCount] = useState(0)
@@ -8,6 +8,8 @@ const Question = ({ setCorrectAnswers, setResult, questions }) => {
     const onAnswer = (option) => {
         if(option === question?.answer){
             setCorrectAnswers(prev => ++prev)
+        }else{
+            setCorrectAnswers(prev => prev && --prev )
         }
 
         if(questions[count+1]){
