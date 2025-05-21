@@ -29,7 +29,7 @@ const Question = ({ setCorrectAnswers, setResult, questions, hardMode }) => {
     },[questions])
 
     return (
-        <div className='flex flex-col justify-center items-center bg-slate-800 w-full h-screen'>
+        <div className='flex flex-col justify-center items-center bg-slate-800 w-full h-screen px-4 md:px-16'>
             <span className='text-slate-900 mb-2'>
                 {count+1} out of {questions.length} questions
             </span>

@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import SignIn from "./pages/SignIn"
 import AuthRequired from './components/AuthRequired'
 import AuthRedirect from './components/AuthRedirect'
+import Profile from "./components/Profile"
 
 const App = () => {
 
@@ -15,6 +16,10 @@ const App = () => {
         {
           path: '/',
           element: <Home />
+        },
+        {
+          path: '/profile',
+          element: <Profile />
         }
       ]
     },
