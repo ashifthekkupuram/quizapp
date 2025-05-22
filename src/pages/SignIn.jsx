@@ -16,7 +16,6 @@ const SignIn = () => {
             await signInWithPopup(auth, googleProvider)
 
         } catch(error){
-            console.log(error)
             setError(error.message)
         }
     }

@@ -21,7 +21,7 @@ const Result = ({ setStart, correctAnswers, setCorrectAnswers, setResult, setQue
             score: correctAnswers,
             user: auth?.currentUser?.uid,
             mode: hardMode ? 'Hard' : 'Normal',
-            completed_at: new Date()
+            completed_at: Date.now()
         }
         const saveQuiz = async (retries) => {
             try {
