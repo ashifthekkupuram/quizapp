@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { collection, getDocs, where, query } from "firebase/firestore"
+import { collection, getDocs, where, query, orderBy } from "firebase/firestore"
 import { format } from 'date-fns'
 
 import { auth, db } from '../firebase/firebase'
@@ -27,13 +27,14 @@ const Profile = () => {
         let timeout
         const getQuiz = async (retries) => {
             try {
-                const q = query(collection(db, 'quiz'), where('user', '==', auth.currentUser.uid))
+                const q = query(collection(db, 'quiz'), where('user', '==', auth.currentUser.uid), orderBy('completed_at', 'desc'))
                 const response = await getDocs(q)
                 const docs = response.docs
                 const data = docs.map((doc) => doc.data())
                 setQuiz(data)
             } catch (error) {
                 if (retries <= 0) {
+                    console.error(error)
                     return
                 } else {
                     timeout = setTimeout(() => getQuiz(retries - 1), 2500)
@@ -99,9 +100,9 @@ const Profile = () => {
             <div className='flex flex-col justify-center items-center gap-3 w-full bg-slate-600 rounded py-4 px-2 md:px-4'>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {quiz && quiz.map((q, index) => <div key={index} className='flex flex-col justify-center items-start gap-1 bg-slate-700 rounded p-4 text-white'>
-                        <span className='text-xs font-medium text-slate-800'>Date: {format(q.completed_at, 'd/MM/yyyy h:m aaa')}</span>
+                        <span className='text-xs font-medium text-slate-800'>Date: {format(q.completed_at, 'd/MM/yyyy h:mm aaa')}</span>
                         <h1 className='font-bold'>Score: {q.score}/{q.total_score}</h1>
-                        <h1 className='text-xs text-slate-800'>Mode: {q.mode}</h1>
+                        <h1 className='text-xs text-slate-800'>Mode: <span className={`${q.mode === 'Hard' ? 'text-red-700' : 'text-green-700'} font-bold`}>{q.mode}</span></h1>
                     </div>)}
                 </div>
             </div>
