@@ -9,9 +9,11 @@ const firebaseConfig = {
     projectId: "quizapp-77ea2",
     storageBucket: "quizapp-77ea2.firebasestorage.app",
     messagingSenderId: "115164693475",
-    appId: "1:115164693475:web:532f78602bf5f7807816d6",
-    measurementId: "G-8FZT49BZTR"
+    appId: "1:115164693475:web:052e8d02464cdb807816d6",
+    measurementId: "G-PTE8MQ9YCR"
 }
+
+
 
 export const app = initializeApp(firebaseConfig)
 
