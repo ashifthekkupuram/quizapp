@@ -18,8 +18,8 @@ const Profile = () => {
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
-            setProfile(user.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')
-            setName(user.displayName || '')
+            setProfile(user?.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')
+            setName(user?.displayName || '')
         })
     }, [])
 
@@ -69,7 +69,7 @@ const Profile = () => {
         <div className='flex flex-col justify-start items-center gap-2 bg-slate-800 w-full min-h-screen px-6 md:px-12 py-16'>
             <NavBar />
             <div className='flex flex-col justify-center items-center gap-3 w-full bg-slate-600 rounded p-4'>
-                <img src={profile} className='h-24 w-24 rounded-full object-contain' alt={name} />
+                <img src={profile} className='h-24 w-24 rounded-full object-contain' />
                 <h1 className='text-white font-semibold text-3xl'>{name}</h1>
                 <div className='flex justify-center items-center gap-4 text-white'>
                     <div className='flex flex-col justify-center items-center gap-2'>

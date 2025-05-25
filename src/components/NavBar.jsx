@@ -13,8 +13,8 @@ const NavBar = () => {
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
-            if(user.photoURL){
-                setProfile(user.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')
+            if(user?.photoURL){
+                setProfile(user?.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg')
             }
         })
     },[])

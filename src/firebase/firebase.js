@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore"
 
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
+    apiKey: 'AIzaSyD4Cbd3GRiYII2xFDtX3eZ-lTk5oTi2USE',
     authDomain: "quizapp-77ea2.firebaseapp.com",
     projectId: "quizapp-77ea2",
     storageBucket: "quizapp-77ea2.firebasestorage.app",

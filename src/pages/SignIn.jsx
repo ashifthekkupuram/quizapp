@@ -35,14 +35,6 @@ const SignIn = () => {
                     />
                     Continue with Google
                 </button>
-                <button onClick={googleAuth} className="rounded-md flex items-center border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-                    <img
-                        src="https://docs.material-tailwind.com/icons/google.svg"
-                        alt="metamask"
-                        className="h-5 w-5 mr-2"
-                    />
-                    Continue with Google
-                </button>
             </div>
         </div>
     )
